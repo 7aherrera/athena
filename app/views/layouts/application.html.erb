@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Athena2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<img src = "http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png" width="100">
+
+<% if user_signed_in? %>
+	<%= link_to 'Logout' , destroy_user_session_path, :method => :delete %>
+   <% end %>
+
+<%= yield %>
+
+</body>
+</html>
